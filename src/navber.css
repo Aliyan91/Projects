@@ -1,0 +1,12 @@
+.Navbar{
+    padding: 20px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    background-color:blue;
+    height: 114px;
+}
+.items{
+    justify-content: flex-end;
+    color: black;
+}
