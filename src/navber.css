@@ -7,6 +7,31 @@
     height: 114px;
 }
 .items{
-    justify-content: flex-end;
+    align-items: end;
     color: black;
+    padding-bottom: 12px;
+    justify-self:flex-end;
+}
+.items1:hover{
+    opacity: 0.8;
+}
+.button{
+    font-weight: bold;
+    border-radius: 50px;
+    width: 140px;
+    font-size: 16px;
+    height: 54px;
+    background-color: #43a724;
+    border:2px solid #43a724;
+    margin-left: 10px;
+}
+.button1:hover{
+    opacity:0.8;
+}
+.image{
+    height: 40px;
+    width: 175px;
+}
+.container{
+    display: flex;
 }
