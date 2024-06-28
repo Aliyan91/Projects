@@ -1,5 +1,4 @@
 .Navbar{
-    padding: 20px;
     color: black;
     font-size: 16px;
     font-weight: bold;
@@ -7,10 +6,9 @@
     height: 114px;
 }
 .items{
-    align-items: end;
     color: black;
-    padding-bottom: 12px;
-    justify-self:flex-end;
+    margin-top: 5px;
+    
 }
 .items1:hover{
     opacity: 0.8;
@@ -24,6 +22,7 @@
     background-color: #43a724;
     border:2px solid #43a724;
     margin-left: 10px;
+    
 }
 .button1:hover{
     opacity:0.8;
@@ -32,6 +31,27 @@
     height: 40px;
     width: 175px;
 }
+.brand{
+    margin-right: 50px;
+}
 .container{
-    display: flex;
+    display: grid; /* Enable grid layout */
+    grid-template-columns: 1fr auto;
+
+}
+.button2{
+    font-weight: bold;
+    border-radius: 50px;
+    width: 168px;
+    font-size: 16px;
+    height: 54px;
+    font-size: 16x;
+    background-color: white;
+    border:2px solid #43a724;
+    margin-left: 10px;
+    color: #43a724;
+}
+.alignment{
+    justify-content: end;
+
 }
