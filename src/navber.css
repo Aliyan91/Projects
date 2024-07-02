@@ -1,6 +1,6 @@
 .Navbar{
     color: black;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     background-color:blue;
     height: 114px;
@@ -54,7 +54,4 @@
 .alignment{
     justify-content: end;
 
-}
-.container{
-    width: 100%;
 }

@@ -13,4 +13,24 @@
 .h1{
     font-size: 54px;
     font-weight: bold;
+    text-align: left;
 }
+.App {
+    overflow: hidden; /* Hide overflow to prevent scrollbar during slide-in */
+  }
+  
+  .slide-in-text {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+    color: #43a724;
+    font-size: 54px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .slide-in-text.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
