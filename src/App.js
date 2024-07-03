@@ -3,6 +3,7 @@ import Menu from './navbar';
 import InterneeHeader from './accordian';
 import { Container } from 'react-bootstrap';
 import "./App.css"
+import Sectiom from './sectiom';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Container fluid className='Container'>
       <Menu></Menu>
       <InterneeHeader></InterneeHeader>
+      <Sectiom></Sectiom>
     </Container>
   );
 }

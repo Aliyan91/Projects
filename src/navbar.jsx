@@ -10,7 +10,7 @@ function Menu() {
   return (
     <Navbar expand="lg" className="Navbar bg-white" >
       <Container fluid >
-        <Navbar.Brand href="#home" className='brand'><img src="https://internee.pk/images/logo.webp" className='image'></img></Navbar.Brand>
+        <Navbar.Brand href="#home" className='brand'><img src="https://internee.pk/images/logo.webp" className='img'></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <div className='container'>
