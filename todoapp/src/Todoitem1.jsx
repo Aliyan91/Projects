@@ -1,6 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useContext } from 'react';
 import { MdDelete } from "react-icons/md";
+import { todoitemsContext } from './todoitems-stor';
 export default function Todoitem1(props){
+
+    const del=useContext(todoitemsContext);
+    
+
     return(
     <div className="container text-center">
         <div className="row">

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Addtodo from './Addtodo';
 import { useReducer, useState } from 'react';
 import WelcomeMessage from './WelcomeMessage';
+import { todoitemsContext } from './todoitems-stor';
 
 const todoitemreducer =(currentTodo,action)=>{
   console.log(`Name:${action.payload.itemname} Date:${action.payload.itemdate}`)
@@ -25,14 +26,49 @@ function App() {
   ];
 
   //const [todoitem,newtodoitem]=useState([]);
+  const [todoitem ,dispatch] = useReducer(todoitemreducer,[]);
+
+  function NewItem(itemname,itemdate){
+    if(itemname.length>0 && itemdate.length>0){
+      const newItemAction={
+         
+        type:"NEW_ITEM",
+        payload:{
+          itemname,
+          itemdate
+        }
+      };
+      dispatch(newItemAction);
+      /*const newdata=[...todoitem,{name:itemname,date:itemdate}];
+      newtodoitem(newdata);*/
+    }
+    
+  }
+  function handledelete(todoitemname){
+    const delItemAction={
+      type:"DELETE_ITEM",
+      payload:{
+        itemname:todoitemname,
+      }
+    };
+    dispatch(delItemAction);
+    /*const newitems=todoitem.filter(item => item.name !== todoitemname);
+    newtodoitem(newitems);*/
+  }
   
   return (
-    <div className="cotainer text-center">
-      <Appame></Appame>
-      <Addtodo onNewItem={NewItem}></Addtodo>
-      {todoitem.length===0 && <WelcomeMessage></WelcomeMessage>}
-      <Todoitem2 items={todoitem} onClick={handledelete}></Todoitem2>
-    </div>
+    <todoitemsContext.Provider value={{
+      items:todoitem,
+      addnewitems: NewItem,
+      deleteitem:handledelete,
+    }}>
+      <div className="cotainer text-center">
+        <Appame></Appame>
+        <Addtodo ></Addtodo>
+        <WelcomeMessage></WelcomeMessage>
+        <Todoitem2 ></Todoitem2>
+      </div>
+    </todoitemsContext.Provider>
   );
 }
 

@@ -1,11 +1,15 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import "./Addtodo.css";
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IoMdAdd } from "react-icons/io";
+import { todoitemsContext } from "./todoitems-stor";
 
-export default function Addtodo({onNewItem}){
+export default function Addtodo(){
     
+    const obj=useContext(todoitemsContext);
+    const add=obj.addnewitems;
+
     const todoNameElement=useRef();
     const TodoDateElement=useRef();
 
@@ -14,7 +18,7 @@ export default function Addtodo({onNewItem}){
         const todoDate=TodoDateElement.current.value;
         todoNameElement.current.value='';
         TodoDateElement.current.value='';
-        onNewItem(todoName,todoDate);
+        add(todoName,todoDate);
 
     }
     const mystyle ={
