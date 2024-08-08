@@ -14,8 +14,8 @@ export default function Todoitem2(){
         <Todoitem1 
             todoDate={i.date} 
             todoName={i.name} 
-            onDeleteClick={onClick}>
-            key={i.name}
+            onDeleteClick={onClick}
+            key={i.name}>
         </Todoitem1>))}
     </div>
     );
