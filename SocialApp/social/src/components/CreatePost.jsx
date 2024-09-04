@@ -19,6 +19,13 @@ export default function CreatePost() {
         const userreactions=reactions.current.value;
         const usertags=tags.current.value.split(" ");
 
+        id.current.value="";
+        title.current.value="";
+        body.current.value="";
+        reactions.current.value="";
+        tags.current.value="";
+
+
         addpost(userid,usertitle,userbody,userreactions,usertags);
 
     }

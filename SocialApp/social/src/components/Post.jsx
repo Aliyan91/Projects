@@ -11,7 +11,6 @@ export default function Card({ post }) {
             <div className="card-body">
                 <h5 className="card-title">{post.title}
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" onClick={()=>deletepost(post.id)}>
-
                         <MdDelete />
                     </span>
                 </h5>

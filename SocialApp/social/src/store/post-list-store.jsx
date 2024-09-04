@@ -3,8 +3,9 @@ import { createContext, useReducer } from "react";
 export const Postlist = createContext({
     postList: [],
     addpost: () => { },
-    deletepost: () => { }
-});
+    deletepost: () => { },
+    addinitialposts:()=>{},
+}); 
 
 function postlistReducer(currPostList, action) {
     let newpostlist = currPostList;
@@ -14,10 +15,13 @@ function postlistReducer(currPostList, action) {
     else if(action.type === "Add_Post"){
         newpostlist=[action.payload,...currPostList];
     }
+    else if(action.type==="Add_Posts"){
+        newpostlist=action.payload.posts;
+    }
     return newpostlist;
 }
 const PostListProvider = ({ children }) => {
-    const [postList, dispatchpostlist] = useReducer(postlistReducer, Default_POST_LIST);
+    const [postList, dispatchpostlist] = useReducer(postlistReducer, []);
 
     function addpost(userid, usertitle, userbody, userreactions, usertags) {
         dispatchpostlist({
@@ -26,10 +30,20 @@ const PostListProvider = ({ children }) => {
                 id: Date.now() ,
                 title: usertitle,
                 body: userbody,
-                reactions: userreactions,
+                //reactions: userreactions,
                 userId: userid,
                 tags: usertags,
             }
+        })
+    }
+
+    function addinitialposts(posts) {
+        dispatchpostlist({
+            type: "Add_Posts",
+            payload: {
+                posts
+            
+            }, 
         })
     }
 
@@ -46,28 +60,10 @@ const PostListProvider = ({ children }) => {
         postList,
         addpost,
         deletepost,
+        addinitialposts,
     }
     }>{children}</Postlist.Provider>
 }
 
-const Default_POST_LIST = [
-    {
-        id: "1",
-        title: "Going to Lahore",
-        body: "Hi friends I am going to Lahore.Hope to enjoy alot.",
-        reactions: 2,
-        userId: "user-9",
-        tags: ["vacations", "Lahore", "Enjoying"],
-    },
-    {
-        id: "2",
-        title: "Pass ho gaye",
-        body: "4 saal ke masti ka bad bhi ho gaye pass.",
-        reactions: 15,
-        userId: "user-12",
-        tags: ["Graduated", "Unbelieveable"],
-    },
-
-];
 
 export default PostListProvider;
