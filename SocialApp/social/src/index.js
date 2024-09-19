@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
 import {RouterProvider, createBrowserRouter } from "react-router-dom";
 import CreatePost from './components/CreatePost';
+import Postlist from "../src/components/Postlist";
 
 const router =createBrowserRouter([
-  {path: "/",element:<App/>},
-  {path: "/",element:<App/>},
-  {path: "/create-post",element:<CreatePost/>}
+  {path: "/",element:<App/>, children:[{path: "/",element:<Postlist/>},
+  {path: "/create-post",element:<CreatePost/>}]},
+  
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

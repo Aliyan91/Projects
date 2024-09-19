@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext, useRef } from "react";
 import { Postlist } from "../store/post-list-store";
+import { useNavigate } from "react-router-dom";
 
 export default function CreatePost() {
     const id=useRef();
@@ -10,6 +11,7 @@ export default function CreatePost() {
     const tags=useRef();
 
     const {addpost}=useContext(Postlist);
+    const navigate=useNavigate();
 
     function handlesubmit(event){
         event.preventDefault();
@@ -27,6 +29,7 @@ export default function CreatePost() {
 
 
         addpost(userid,usertitle,userbody,userreactions,usertags);
+        
 
     }
     return (

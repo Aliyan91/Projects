@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
+import { Link } from "react-router-dom";
+
 export default function Sidebar({selectedTab,setselectedTab}) {
 
     return (
@@ -11,16 +12,16 @@ export default function Sidebar({selectedTab,setselectedTab}) {
             <hr/>
                 <ul className="nav nav-pills flex-column mb-auto">
                     <li className="nav-item" >
-                        <a href="#" className={`nav-link text-white ${selectedTab === "Home" && "active"}`} aria-current="page" onClick={()=>setselectedTab("Home")}>
+                        <Link to="/" className={`nav-link text-white ${selectedTab === "Home" && "active"}`} aria-current="page" onClick={()=>setselectedTab("Home")}>
                             <svg className="bi pe-none me-2" width="16" height="16" ></svg>
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li >
-                        <a href="#" className={`nav-link text-white ${selectedTab === "Create Post" && "active"}`} onClick={()=>setselectedTab("Create Post")}>
+                        <Link to="/create-post" className={`nav-link text-white ${selectedTab === "Create Post" && "active"}`} onClick={()=>setselectedTab("Create Post")}>
                             <svg className="bi pe-none me-2" width="16" height="16"></svg>
                             Create Post
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <hr/>
