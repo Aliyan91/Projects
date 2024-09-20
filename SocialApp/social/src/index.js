@@ -4,12 +4,13 @@ import './index.css';
 import App from './routes/App';
 import reportWebVitals from './reportWebVitals';
 import {RouterProvider, createBrowserRouter } from "react-router-dom";
-import CreatePost from './components/CreatePost';
-import Postlist from "../src/components/Postlist";
+import CreatePost, { CreatePostAction } from './components/CreatePost';
+import Postlist, { postloader } from "../src/components/Postlist";
 
 const router =createBrowserRouter([
-  {path: "/",element:<App/>, children:[{path: "/",element:<Postlist/>},
-  {path: "/create-post",element:<CreatePost/>}]},
+  {path: "/",element:<App/>, children:[
+  {path: "/",element:<Postlist/>, loader:postloader},
+  {path: "/create-post",element:<CreatePost/>, }]},
   
 ]);
 
