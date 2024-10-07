@@ -27,9 +27,9 @@ function InterneeHeader() {
             their success in the tech industry.
           </p>
           <section style={{textAlign:"left"}}>
-            <img style={{height:'150x',width:'200px',marginRight:"20px"}} src='https://internee.pk/incubation.jpg'></img>
-            <img style={{height:'80px',width:'80px',marginRight:"20px"}} src='https://internee.pk/nep.png'></img>
-            <img style={{height:'59px',width:'100px'}} src='https://internee.pk/nic.png'></img>
+            <img style={{height:'150x',width:'200px',marginRight:"20px"}} src='https://www.internee.pk/assets/see-B4KGe8oa.png'></img>
+            <img style={{height:'80px',width:'80px',marginRight:"20px"}} src='	https://www.internee.pk/assets/nic-DRZpfK9-.png'></img>
+            <img style={{height:'59px',width:'100px'}} src='	https://www.internee.pk/assets/pitb-BxRSQRWU.png'></img>
           </section>
           <section className='sec'>
             <Button style={{marginRight:'60px'}}
@@ -39,7 +39,7 @@ function InterneeHeader() {
         </Col>
         <Col>
         <img style={{height:'670px',width:'670px'}}
-        src='https://internee.pk/images/hero.webp'></img>
+        src='https://www.internee.pk/assets/hero-DtZd5n8h.webp'></img>
         </Col>
       </Row>
   );

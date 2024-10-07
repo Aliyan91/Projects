@@ -6,7 +6,7 @@ export default function Sectiom(){
     return(
         <Container className='sectiom'>
             <div>
-                <img className="image"src='https://internee.pk/images/fav.png'></img>
+                <img className="image"src='	https://www.internee.pk/assets/icon-BT8woF2N.jpg'></img>
             </div>
             <br />
             <div>
