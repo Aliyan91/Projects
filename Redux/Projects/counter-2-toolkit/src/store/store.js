@@ -14,22 +14,33 @@ const counterSlice = createSlice({
 
         },
         add:(state,action)=>{
-            console.log(state,action);
-
+            state.counterVal += Number(action.payload);
         },
         minus:(state,action)=>{
-            console.log(state,action);
+            state.counterVal -= Number(action.payload);
 
         }
     },
 });
 
+const privacySlice=createSlice({
+    name:"privacy",
+    initialState:false,
+    reducers:{
+        toogle:(state)=>{
+            return state=!state;
+        }
+    }
+})
+
 
 
 const counterStore=configureStore({reducer:{
-    Counter:counterSlice.reducer
+    Counter:counterSlice.reducer,
+    privacy:privacySlice.reducer,
 }});
 
+export const privacyActions=privacySlice.actions;
 export const counterActions=counterSlice.actions;
 export default counterStore;
 
